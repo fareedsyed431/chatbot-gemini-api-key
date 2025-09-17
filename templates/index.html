@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style-sheet.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Chatbot using Gemini API Key</h2>
+    <h5>How can I assist you today?</h5>
+    <form action="/" method="POST">
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="Ask anything here..."
+        name="user_input"
+      ></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      {% if response %}
+      <h3>Response:</h3>
+      <p>{{ response }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
